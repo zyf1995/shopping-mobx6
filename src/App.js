@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import AppleBasket from './components/AppleBasket/AppleBasket'
+import { AppleStore, AppleStoreProvider } from './stores/AppleStore/AppleStore'
+
+const appleStore = new AppleStore()
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <AppleStoreProvider store={appleStore}>
+      <AppleBasket/>
+    </AppleStoreProvider>
+  )
 }
 
-export default App;
+export default App
